@@ -1,0 +1,67 @@
+$font_base_size: 12px;
+$color_blue: #026fba;
+$color_grey: #F0F0F0;
+$color_yellow: #FFA500;
+
+html, body{
+    padding: 0px;
+    margin: 15px;
+    line-height: 2;
+}
+
+
+.intro{
+    background-color: $color_grey;
+}
+
+.name{
+    font-size: $font_base_size*2;
+    text-align: center;
+    color:$color_blue;
+    .fa {
+        padding: 10px;
+        font-size: 20px;
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        text-decoration: none;
+    }  
+    .fa-linkedin {
+        background: #3B5998;
+        color: white;
+      }
+}
+
+
+
+.question{
+    color: $color_yellow;
+    font-size: $font_base_size*2;
+    text-align: center;
+}
+
+ul li{
+    font-size: $font_base_size*1.5;
+}
+
+ol li{
+    font-size: $font_base_size*1.5;
+}
+
+.content{
+    font-size: $font_base_size*1.5;
+}
+
+
+
+.title{
+    //background-color: #333;
+    //display: block;
+    //border: solid 3px;
+    text-align: center;
+    font-size: $font_base_size*3;
+    color: $color_blue;
+    background-color: $color_grey;
+}
+
+
