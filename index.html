@@ -29,6 +29,13 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+    function writeData(){
+        firebase.database().ref("ChecklistDB").set({
+            time: document.getElementById("currentDateTime").value,
+            name: document.getElementById("nameField").value,
+            task: document.getElementById("taskField").value
+        })
+    }
     </script>
 
 
@@ -45,9 +52,9 @@
     document.getElementById("currentDateTime").value = dateTime;
     </script>
 
-    <input type="text" placeholder="Name">
-    <input type="text" placeholder="Task">
-    <button>Submit</button>
+    <input type="text" placeholder="Name" id="nameField">
+    <input type="text" placeholder="Task" id="taskField">
+    <button onclick="writeData()">Submit</button>
 
 </body>
 </html>
