@@ -18,6 +18,7 @@ $('#contactForm').submit(function(e) {
  
     var newMessageRef = messagesRef.push();
     newMessageRef.set({
+        timestamp: $('.timestamp').val(),
         name: $('.fullname').val(),
         email: $('.email').val(),
         subject: $('.subject').val(),
