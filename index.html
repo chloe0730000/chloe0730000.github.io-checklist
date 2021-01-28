@@ -6,39 +6,39 @@
     <title>EOD BAU Checklist</title>
 </head>
 <body>
-    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
 
     <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-        apiKey: "AIzaSyDPAWmRdI_hlgrWzmDPCdiLA-wAYuJKcAI",
-        authDomain: "checklist-test-e2847.firebaseapp.com",
-        projectId: "checklist-test-e2847",
-        storageBucket: "checklist-test-e2847.appspot.com",
-        messagingSenderId: "383664399070",
-        appId: "1:383664399070:web:bdb90b7b12c5f57107d84f",
-        measurementId: "G-TT6MMDSSGG"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    
-    function writeData(){
-        firebase.database().ref("ChecklistDB").set({
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCV3WTDojrGQk5mTMxbxF-_HSaGlM-I_fE",
+        authDomain: "checklist-db.firebaseapp.com",
+        databaseURL: "https://checklist-db-default-rtdb.firebaseio.com",
+        projectId: "checklist-db",
+        storageBucket: "checklist-db.appspot.com",
+        messagingSenderId: "481301777332",
+        appId: "1:481301777332:web:e433f68bd2c3b72d63c0e1",
+        measurementId: "G-YWE54FTC8V"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      function writeData(){
+        firebase.database().ref("checklist-db").set({
             time: document.getElementById("currentDateTime").value,
             name: document.getElementById("nameField").value,
             task: document.getElementById("taskField").value
-        })
-    }
+        })}
+      db = firebase.firestore();
     </script>
-
 
 
     <h1>EOD Checklist</h1>
