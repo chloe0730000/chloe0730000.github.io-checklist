@@ -11,6 +11,33 @@ const firebaseConfig = {
   };
 firebase.initializeApp(firebaseConfig);
 
+firebase.database().ref('contactformmessages').on('value',(snap)=>{
+    //console.log(snap.key);
+    //console.log(snap.val());
+    var arr = snap.val();
+    var arr2 = Object.values(arr);
+    console.log(arr);
+    console.log(arr.email);
+    console.log(arr2);
+    console.log(arr2.email);
+
+    // put realtime database data back
+    $("#dbdata").text(JSON.stringify(arr2));
+
+  });
+
+  firebase.database().ref('contactformmessages').once('value',(data)=>{
+    //console.log(data.toJSON());
+    data.forEach(function(snapshot){
+      var arr = snapshot.val();
+      var arr2 = Object.values(arr);
+      console.log(arr2);
+      $("#dbdata").text(JSON.stringify(arr2));
+    })
+    })
+
+
+
 
 var messagesRef = firebase.database().ref('contactformmessages');
 $('#contactForm').submit(function(e) {
